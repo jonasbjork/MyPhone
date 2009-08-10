@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
   ser.remove(0,1);
   qDebug() << "Serial no: " << ser;
   QString mod = mp->talkToPhone(NOKIA_MODEL);
-  ser.remove(0,1);
+  mod.remove(0,1);
   qDebug() << "Model: " << mod;
   mp->closeConnection();
   return 0;
