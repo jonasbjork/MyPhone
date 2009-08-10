@@ -1,0 +1,12 @@
+
+
+Installation
+
+Note: You must compile lib directory too!
+
+cd lib
+qmake
+make
+cd ..
+qmake
+make
