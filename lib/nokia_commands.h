@@ -1,0 +1,10 @@
+#ifndef NOKIA_COMMANDS_H
+#define NOKIA_COMMANDS_H
+
+#define NOKIA_BRAND "ATI0"
+#define NOKIA_SERIAL "ATI1"
+#define NOKIA_VERSION "ATI2"
+#define NOKIA_MODEL "ATI3"
+
+
+#endif
