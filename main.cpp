@@ -12,7 +12,10 @@ int main(int argc, char** argv) {
   
   //qDebug() << mp->getMe();
   mp->openConnection();
+  
+  // Testing the talkToPhone method
   QString man = mp->talkToPhone(NOKIA_BRAND);
+  // Ugly hack to remove the "-char from return
   man.remove(0,1);
   qDebug() << "Manufacturer: " << man;
   QString ser = mp->talkToPhone(NOKIA_SERIAL);

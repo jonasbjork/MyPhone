@@ -19,6 +19,7 @@ MyPhoneAPI::MyPhoneAPI() {
   isConnected = false;
 }
 
+// Only a test to see that the shared object did work
 QString MyPhoneAPI::getMe() {
   return "Got me!";
 }
@@ -28,6 +29,10 @@ MyPhoneAPI* GetClass() {
   return mp;
 }
 
+/*
+  Open a serial connection
+  @TODO: Make use of other devices than ttyACM0
+*/
 void MyPhoneAPI::openConnection() {
 
   const char *device = "/dev/ttyACM0";
@@ -56,6 +61,9 @@ void MyPhoneAPI::openConnection() {
   }
 }
 
+/*
+  close the serial connection
+*/
 void MyPhoneAPI::closeConnection() {
   close(fd);
   isConnected = false;
@@ -63,6 +71,10 @@ void MyPhoneAPI::closeConnection() {
 
 }
 
+/*
+  sends commands to the phone
+  @TODO: Must fix this, mostly of the code is trial and error
+*/
 QString MyPhoneAPI::talkToPhone(QString command) {
 
   if(isConnected) {
@@ -87,6 +99,8 @@ QString MyPhoneAPI::talkToPhone(QString command) {
 	break;
     }
     *bufptr = '\0';
+    
+    // ugly hack to get rid of the command we send to phone
     QString b = QString::fromAscii(buffer);
     QStringList list = b.split('\r', QString::SkipEmptyParts);
     QString l = list[1];
